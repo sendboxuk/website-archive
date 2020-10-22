@@ -303,3 +303,6 @@ exports.setup = series(setupBulma);
 // DEV
 exports.dev = series(cleanDist, copyFont, copyData, jsVendor, cssVendor, copyImages, compileHTML, concatPlugins, concatCssPlugins, compileJS, resetPages, prettyHTML, compileSASS, compileSCSS, browserSyncInit, watchFiles);
 
+// BUILD
+const build = series(cleanDist, copyFont, jsVendor, copyData, compileSASS, compileSCSS, compileHTML, copyImages);
+exports.build = build;
