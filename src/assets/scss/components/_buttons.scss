@@ -77,8 +77,8 @@ Classes to change the feel of bulma buttons
 
     &.secondary-btn {
         outline: none;
-        border-color: $secondary;
-        background-color: $secondary;
+        border-color: $bloody;
+        background-color: $bloody;
         color: $white;
         transition: all 0.5s;
 
@@ -87,18 +87,18 @@ Classes to change the feel of bulma buttons
         }
 
         &.raised:hover {
-            box-shadow: 0 14px 26px -12px rgba($secondary, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba($secondary, 0.2) !important;
+            box-shadow: 0 14px 26px -12px rgba($bloody, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba($bloody, 0.2) !important;
             opacity: 0.8;
         }
 
         &.btn-outlined {
-            border-color: $secondary;
-            color: $secondary;
+            border-color: $bloody;
+            color: $bloody;
             background-color: transparent;
 
             &:hover {
                 color: $white;
-                background-color: $secondary;
+                background-color: $bloody;
             }
         }
     }
