@@ -15,13 +15,108 @@ title: SendBox Documentation
 
     <div class="content-wrapper">
       <div class="columns">
-        <div class="column is-6">
-
-            Topics
+        <div class="column is-3">
+          <section class="section is-medium">
+            <ul class="list-unstyled">
+              <li class="is-size-4"><a href="#quickstart">Quickstart</a></li>
+              <li class="is-size-4">
+                <a href="#installation">Installation</a>
+              </li>
+              <li class="is-size-4">
+                <a href="#configuration">Configuration</a>
+              </li>
+              <li class="is-size-4">
+                <a href="#templates">Creating Templates</a>
+              </li>
+              <li class="is-size-4">
+                <a href="#products">Setting up Products</a>
+              </li>
+              <li class="is-size-4">
+                <a href="#token">Generating API Token</a>
+              </li>
+              <li class="is-size-4"><a href="#api">API Endpoints</a></li>
+              <li class="is-size-4"><a href="#working">Working with API</a></li>
+              <li class="is-size-4"><a href="#auditing">Auditing Emails</a></li>
+            </ul>
+          </section>
         </div>
         <div class="column is-9">
-          Content
+          <section class="section content is-medium" id="quickstart">
+            <h3 class="is-size-3">Quickstart</h3>
+            <p>
+              SendBox is built with Laravel framework. Current release is based
+              on Laravel v8. All server requirements are same as with Laravel.
+            </p>
+            <blockquote>
+              <ul class="list-unstyled">
+                <li>PHP 7.4 or higher</li>
+                <li>Laravel 8 or higher</li>
+                <li>Redis</li>
+                <li>MySQL 5.7 or higher</li>
+              </ul>
+            </blockquote>
+            <p>
+              We highly recomend you to use Redis for cache and queue support.
+            </p>
+          </section>
+          <section class="section is-medium" id="installation">
+            <h3 class="is-size-3">Installation</h3>
+            <p>Clone or download the repository to your server:</p>
 
+            <code>
+              git clone https://github.com/sendboxuk/application.git
+            </code>
+
+            <p>or download latest release from:</p>
+
+            <code> https://github.com/sendboxuk/application/releases </code>
+
+            <p>Run composer to install dependecies</p>
+
+            <code> composer install </code>
+
+            <p>Update application permissions</p>
+
+            <code>
+              chmod -R 755 storage sudo chown -R www-data:www-data storage
+              bootstrap public/logo
+            </code>
+            <p>Create a database in your mysql or mariadb and migration tool and populate the database with sample data</p>
+
+           <code>
+             php artisan migrate:refresh --seed
+           </code>
+ 
+<p>
+Now you application ready to run. Browse to your website and login with following creadentioals:
+  
+</p>
+ <code><i>username: demo@sendbox.uk </i> <br>
+
+<i>password: password</i> <br>
+</code>
+          </section>
+          <section class="section is-medium" id="configuration">
+            <h3 class="is-size-3">Configuration</h3>
+          </section>
+          <section class="section is-medium" id="templates">
+            <h3 class="is-size-3">Creating Templates</h3>
+          </section>
+          <section class="section is-medium" id="products">
+            <h3 class="is-size-3">Setting up Products</h3>
+          </section>
+          <section class="section is-medium" id="token">
+            <h3 class="is-size-3">Generating API Token</h3>
+          </section>
+          <section class="section is-medium" id="api">
+            <h3 class="is-size-3">API Endpoints</h3>
+          </section>
+          <section class="section is-medium" id="working">
+            <h3 class="is-size-3">Working with API</h3>
+          </section>
+          <section class="section is-medium" id="auditing">
+            <h3 class="is-size-3">Auditing Emails</h3>
+          </section>
         </div>
       </div>
     </div>
