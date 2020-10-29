@@ -5,18 +5,18 @@ title: SendBox Documentation
 
 {{> navbar}} {{> navbar-clone}}
 
-<section class="section section-light-grey is-medium">
+<section class="section section-light-grey ">
   <div class="container">
     <div class="title-wrapper has-text-centered">
       <h2 class="title is-2 is-spaced">Documentation</h2>
-      <h3 class="subtitle is-5 is-muted"></h3>
+      
       <div class="divider is-centered"></div>
     </div>
 
     <div class="content-wrapper">
       <div class="columns">
         <div class="column is-3">
-          <section class="section is-medium">
+          <section class="section">
             <ul class="list-unstyled">
               <li class="is-size-4"><a href="#quickstart">Quickstart</a></li>
               <li class="is-size-4">
@@ -41,11 +41,11 @@ title: SendBox Documentation
           </section>
         </div>
         <div class="column is-9">
-          <section class="section content is-medium" id="quickstart">
+          <section class="section content" id="quickstart">
             <h3 class="is-size-3">Quickstart</h3>
             <p>
-              SendBox is built with Laravel framework. Current release is based
-              on Laravel v8. All server requirements are same as with Laravel.
+              SendBox is built with Laravel framework. The current release is based
+              on Laravel v8. All server requirements are the same as with Laravel.
             </p>
             <blockquote>
               <ul class="list-unstyled">
@@ -81,41 +81,160 @@ title: SendBox Documentation
               chmod -R 755 storage sudo chown -R www-data:www-data storage
               bootstrap public/logo
             </code>
-            <p>Create a database in your mysql or mariadb and migration tool and populate the database with sample data</p>
+            <p>
+              Create a database in your mysql or mariadb and migration tool and
+              populate the database with sample data
+            </p>
 
-           <code>
-             php artisan migrate:refresh --seed
-           </code>
- 
-<p>
-Now you application ready to run. Browse to your website and login with following creadentioals:
-  
-</p>
- <code><i>username: demo@sendbox.uk </i> <br>
+            <code> php artisan migrate:refresh --seed </code>
 
-<i>password: password</i> <br>
-</code>
+            <p>
+              Now your application is ready to run. Browse to your website and login
+              with following credentials:
+            </p>
+            <code>
+              <p><i>username: demo@sendbox.uk </i></p>
+
+              <p><i>password: password</i></p>
+            </code>
           </section>
-          <section class="section is-medium" id="configuration">
+          <section class="section content is-medium" id="configuration">
             <h3 class="is-size-3">Configuration</h3>
+
+            <p>
+              You need to update the environment variables in
+              <code>.env</code> file. You will find this file at the root of the application.
+            </p>
+
+            <p>
+              All of the configuration files for the Laravel framework are stored in the config directory. You may get more details by visiting
+              the URL below.
+            </p>
+            <code>https://laravel.com/docs/8.x/configuration</code>
+
+            <p>
+              The most important point is to configure the email sending service. SendBox is currently supporting the following services:
+            </p>
+            <blockquote>
+              <ul class="list-unstyled">
+                <li>Mailgun</li>
+                <li>SendGrid</li>
+                <li>Amazon SES</li>
+                <li>Postmark</li>
+              </ul>
+            </blockquote>
+
+            <code> https://laravel.com/docs/8.x/mail </code>
           </section>
           <section class="section is-medium" id="templates">
             <h3 class="is-size-3">Creating Templates</h3>
+            <p>
+              Templates are playing a major role in SendBox. You need to design your template carefully. You may put your variables as described in Laravel Documentation. You need to put the email templates into
+              the following directory:
+            </p>
+            <code> resources/view/emails </code>
+            <p>
+              You will put these variables into placeholders' textarea separating with comma. The system will replace your values before sending the email.
+            </p>
+            <img
+              class="image"
+              src="/assets/img/docs/create_template.jpg"
+              alt=""
+            />
           </section>
           <section class="section is-medium" id="products">
             <h3 class="is-size-3">Setting up Products</h3>
+            <p>
+              Maybe the purpose of this project is based on this feature. Every eCommerce company or vendor wants to send a special email for each product in their catalogue. SendbBox allows you to send different email designs for each product with different information. You may pass this updatable information with the API interface.
+            </p>
+            <img
+              class="image"
+              src="/assets/img/docs/create_product.jpg"
+              alt=""
+            />
+            <p>
+              The above image is a very good example of usage. It's using a special template. The system will choose the right template designed for this product and update the variables using a template placeholder.
+            </p>
           </section>
           <section class="section is-medium" id="token">
             <h3 class="is-size-3">Generating API Token</h3>
+            <p>
+              Communication with your application and system is based on API. We're using API Token to protect the SendBox. You need to generate your
+              API Key from the Settings page. Don't forget to copy the key after you generated it.
+            </p>
+
+            <img
+              class="image"
+              src="/assets/img/docs/create_api_key.jpg"
+              alt=""
+            />
           </section>
           <section class="section is-medium" id="api">
             <h3 class="is-size-3">API Endpoints</h3>
+
+            <p>
+              SendBox has two API endpoints. You may choose a product to send the email or you may choose a template. If you will send a
+              notification or announcement, choosing a template will be a better choice.
+            </p>
+            <code>
+              <p>{$APP_URL}api/sendby/product</p>
+              <p>{$APP_URL}api/sendby/template</p>
+            </code>
+
+            <p>
+              Both API URL is token-based protected. must send this token in the
+              Authorization header when making requests to protected resources:
+            </p>
+
+            <code>Authorization: Bearer {$token}</code>
           </section>
           <section class="section is-medium" id="working">
             <h3 class="is-size-3">Working with API</h3>
+            <p>Each template or product page also shows you a presentation of the JSON body with an example.
+              While creating API clients, will give you a start point. 
+
+            </p>
+
+<code>
+  <pre>
+  {
+    "template": 1,
+    "transaction_id": "YOUR TRANSACTION ID",
+    "email": "WHO WILL RECEIVE",
+    "placeholders": {
+        "customer_name": "UPDATE DATA",
+        "serial_key": "UPDATE DATA"
+    }
+}
+</pre>
+</code>
+
+<code>
+  <pre>
+    {
+      "sku": "XHA",
+      "transaction_id": "YOUR TRANSACTION ID",
+      "email": "WHO WILL RECEIVE",
+      "placeholders": {
+          "customer_name": "UPDATE DATA",
+          "serial_key": "UPDATE DATA"
+      }
+  }
+</pre>
+</code>
+
+
+<p>
+  As you see that, both API must have email and transaction_id entries in the first part of the JSON body. 
+  If you choose a product, you should provide the SKU of the product. If you'll use a directly template,
+  you need to enter template ID.   
+</p>
           </section>
           <section class="section is-medium" id="auditing">
             <h3 class="is-size-3">Auditing Emails</h3>
+            <p>Copy of each mail stored in the database. You may filter the results by email or transaction Id. 
+              You may use the order Ids as transaction Id, so you may easily find a copy of the email in the database.  
+            </p>
           </section>
         </div>
       </div>
