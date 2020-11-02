@@ -1,0 +1,50 @@
+---
+layout: default
+title: How it's working
+---
+
+{{> navbar}} {{> navbar-clone}}
+
+<section class="section is-medium">
+    <div class="container">
+        <div class="title-wrapper has-text-centered">
+            <h2 class="title is-2">How it's working</h2>
+            <h3 class="subtitle is-5 is-muted">Step by step a detailed flow of the route of an email</h3>
+            <div class="divider is-centered"></div>
+        </div>
+
+        <div class="columns is-vcentered side-feature mt-60">
+            <div class="column is-4 is-offset-2">
+                <h3 class="title is-3 mb-10 is-title-reveal">Your application(s) </h3>
+                <p class="subtitle is-5 is-muted">
+                    Your application prepares the data variables and calls the API. You may use a template or a product/service. You need to deliver at least a transaction ID for your email and a targeted email.
+                </p>
+            </div>
+            <div class="column is-5">
+                <img src="assets/img/illustrations/undraw_online_transactions_02ka.svg" alt="">
+            </div>
+        </div>
+        <div class="columns is-vcentered side-feature mt-60">
+            <div class="column is-5 is-offset-1">
+                <img src="assets/img/illustrations/undraw_emails_6uqr.svg" alt="">
+            </div>
+            <div class="column is-4 is-offset-1">
+                <h3 class="title is-3 mb-10 is-title-reveal">Generating and sending the email</h2>
+                <p class="subtitle is-5 is-muted">Either choose a product or a template, the system will pick up the correct template and populate your email. SendBox saves the email in the database to resend in a further request.
+                </p>
+            </div>
+        </div>      
+
+        <div class="columns is-vcentered side-feature mt-60">
+            <div class="column is-4 is-offset-2">
+                <h3 class="title is-3 mb-10 is-title-reveal">Auditing and resending the emails </h3>
+                <p class="subtitle is-5 is-muted">
+                    You may report the API calls and emails in the database. If you need to resend an email, you may resend the email. If you had changed the template or email placeholders, it will fail to send the email. 
+                </p>
+            </div>
+            <div class="column is-5">
+                <img src="assets/img/illustrations/undraw_hiring_cyhs.svg" alt="">
+            </div>
+        </div>          
+    </div>
+</section>
