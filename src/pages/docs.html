@@ -18,29 +18,35 @@ title: SendBox Documentation
         <div class="column is-3">
           <section class="section">
             <ul class="list-unstyled">
-              <li class="is-size-4"><a href="#quickstart">Quickstart</a></li>
-              <li class="is-size-4">
+              <li class="is-size-5"><a href="#quickstart">Quickstart</a></li>
+              <li class="is-size-5">
                 <a href="#installation">Installation</a>
               </li>
-              <li class="is-size-4">
+              <li class="is-size-5">
                 <a href="#configuration">Configuration</a>
               </li>
-              <li class="is-size-4">
+              <li class="is-size-5">
                 <a href="#templates">Creating Templates</a>
               </li>
-              <li class="is-size-4">
+              <li class="is-size-5">
+                <a href="#placeholders">Placeholders</a>
+              </li>              
+              <li class="is-size-5">
+                <a href="#email_templates">Email Templates</a>
+              </li>          
+              <li class="is-size-5">
                 <a href="#products">Setting up Products/Services</a>
               </li>
-              <li class="is-size-4">
+              <li class="is-size-5">
                 <a href="#sending">Sending emails manually</a>
               </li>
 
-              <li class="is-size-4">
+              <li class="is-size-5">
                 <a href="#token">Generating API Token</a>
               </li>
-              <li class="is-size-4"><a href="#api">API Endpoints</a></li>
-              <li class="is-size-4"><a href="#working">Working with API</a></li>
-              <li class="is-size-4"><a href="#auditing">Auditing Emails</a></li>
+              <li class="is-size-5"><a href="#api">API Endpoints</a></li>
+              <li class="is-size-5"><a href="#working">Working with API</a></li>
+              <li class="is-size-5"><a href="#auditing">Auditing Emails</a></li>
             </ul>
           </section>
         </div>
@@ -146,6 +152,37 @@ title: SendBox Documentation
               alt=""
             />
           </section>
+          <section class="section is-medium" id="templates">
+            <h3 class="is-size-3">Sensitive Placeholders</h3>
+            <p>
+              Placeholders are the variables in your email templates. You need to set the variable names
+              while creating your templates. By default, all placeholders are saving to audit log table to 
+              review or resend. If you're sending a sensitive information and not wanting to save to the database, 
+              you should put your variable name in sebsitive placeholder textbox. 
+            </p>
+            <img
+              class="image"
+              src="/assets/img/docs/sensitive_placeholder.jpg"
+              alt=""
+            />
+          </section>      
+          <section class="section is-medium" id="email_templates">
+            <h3 class="is-size-3">Email Template and Variables</h3>
+            <p>
+              You need to put email template files under emails folder inside views. This is common Laravel view folder for email
+              templates. All you need to add the variable names to Template Placeholders textbox. The system will match them while
+              sending the email.    
+            </p>
+            <img
+              class="image"
+              src="/assets/img/docs/email_temple.jpg"
+              alt=""
+            />
+          </section>           
+          <div class="notification is-warning">
+            The next versions of Sendbox will provide you to create and manage all templates from panel. But current version 
+            does not have a tool to create and manage email templates. You may only manage placeholders.
+          </div>
           <section class="section is-medium" id="products">
             <h3 class="is-size-3">Setting up Products</h3>
             <p>
