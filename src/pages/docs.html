@@ -139,18 +139,31 @@ title: SendBox Documentation
           <section class="section is-medium" id="templates">
             <h3 class="is-size-3">Creating Templates</h3>
             <p>
-              Templates are playing a major role in SendBox. You need to design your template carefully. You may put your variables as described in Laravel Documentation. You need to put the email templates into
-              the following directory:
+              Templates are playing a major role in SendBox. 
+              You need to design your template carefully. 
+              You need to place your variables as mustache template syntax.
+
+              After creating template details, you may start to update the HTML codes using onli editor.
             </p>
-            <code> resources/view/emails </code>
+            <strong>Now first, you need to create template details with placeholders</strong>
             <p>
               You will put these variables into placeholders' textarea separating with comma. The system will replace your values before sending the email.
             </p>
             <img
               class="image"
-              src="/assets/img/docs/create_template.jpg"
+              src="/assets/img/docs/create_template-v2.jpg"
               alt=""
             />
+          <p>
+            After creating a template, you may start to update the HTML codes of the email. Online editor gives you the same working at your computer.
+            
+          </p>
+            <img
+            class="image"
+            src="/assets/img/docs/update_email_templates-online.jpg"
+            alt=""
+          />
+            
           </section>
           <section class="section is-medium" id="templates">
             <h3 class="is-size-3">Sensitive Placeholders</h3>
