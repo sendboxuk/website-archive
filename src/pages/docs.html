@@ -35,7 +35,7 @@ title: SendBox Documentation
                 <a href="#email_templates">Email Templates</a>
               </li>          
               <li class="is-size-5">
-                <a href="#products">Setting up Products/Services</a>
+                <a href="#ervices">Setting up Services</a>
               </li>
               <li class="is-size-5">
                 <a href="#sending">Sending emails manually</a>
@@ -196,18 +196,19 @@ title: SendBox Documentation
             The next versions of Sendbox will provide you to create and manage all templates from panel. But current version 
             does not have a tool to create and manage email templates. You may only manage placeholders.
           </div>
-          <section class="section is-medium" id="products">
-            <h3 class="is-size-3">Setting up Products</h3>
+          <section class="section is-medium" id="services">
+            <h3 class="is-size-3">Setting up Services</h3>
             <p>
-              Maybe the purpose of this project is based on this feature. Every eCommerce company or vendor wants to send a special email for each product in their catalogue. SendbBox allows you to send different email designs for each product with different information. You may pass this updatable information with the API interface.
+              Create a service and choose a template. Each template has its own placeholders. When you choose a template,
+              your service will fill the placeholders with variables in Service API. You can add receipts for each service.   
             </p>
             <img
               class="image"
-              src="/assets/img/docs/create_product.jpg"
+              src="/assets/img/docs/create-service.jpg"
               alt=""
             />
             <p>
-              The above image is a very good example of usage. It's using a special template. The system will choose the right template designed for this product and update the variables using a template placeholder.
+              The above image is a very good example of usage. It's using a special template. The system will choose the right template designed for this service and update the variables using a template placeholder.
             </p>
           </section>
           <section class="section is-medium" id="sending">
@@ -247,8 +248,6 @@ title: SendBox Documentation
               notification or announcement, choosing a template will be a better choice.
             </p>
             <code>
-              <p>{$APP_URL}api/sendby/product</p>
-              <p>{$APP_URL}api/sendby/template</p>
               <p>{$APP_URL}api/sendby/service</p>
             </code>
 
